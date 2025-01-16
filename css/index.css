@@ -1,5 +1,12 @@
+/* FONT */
+
+/* Libre Caslon Display */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+
 body {
     background-color: #101010;
+
+    font-family: "Libre Caslon Display", serif;
 }
 
 header {
