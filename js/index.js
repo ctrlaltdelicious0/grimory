@@ -29,9 +29,10 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // REDIRECTS ON CAROUSEL
-const princeRedirectButton = document.getElementById('the_frog_prince');
+const princeRedirectButtons = document.querySelectorAll('.the_frog_prince');
 
-princeRedirectButton.addEventListener('click', function() {
-  window.location.href = '../pages/the_frog_prince.html';
+princeRedirectButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    window.location.href = '../pages/the_frog_prince.html';
+  });
 });
-
