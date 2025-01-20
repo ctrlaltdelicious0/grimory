@@ -5,34 +5,25 @@ console.log("index.js loaded");
 
 // INITIATE LENIS
 const lenis = new Lenis({
-    autoRaf: true,
+  autoRaf: true,
 });
 
 // LISTEN FOR SCROLL EVENTS AND LOG DATA
 lenis.on('scroll', (e) => {
-    console.log(e);
+  console.log(e);
 });
 
 // SWIPER CAROUSEL
 var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false
-    }
-});
-
-// REDIRECTS ON CAROUSEL
-const princeRedirectButtons = document.querySelectorAll('.the_frog_prince');
-
-princeRedirectButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    window.location.href = '../pages/the_frog_prince.html';
-  });
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: false
+  }
 });
