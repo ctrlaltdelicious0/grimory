@@ -30,15 +30,34 @@ header {
     display: flex;
     align-items: end;
     justify-content: center;
+    position: relative;
 }
 
 .hero_title {
     font-size: 90px;
     font-family: 'Libre Caslon Display', serif;
     color: white;
-    line-height: 150px;
+    line-height: 200px;
     letter-spacing: 30px;
     font-weight: 100;
+    position: relative;
+}
+
+.hero_title::after {
+    content: "GRIMORY";
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 0.1;
+    transform: scaleY(-1);
+
+    background: linear-gradient(to top, #101010, rgba(16, 16, 16, 0));
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 /* RECOMMENDED SECTION */
@@ -163,85 +182,68 @@ a {
 
 #grid_item_14 {
     grid-area: 3/4/4/5;
-    background-color: rgba(123, 101, 249, 0.5);
 }
 
 #grid_item_15 {
     grid-area: 3/5/4/6;
-    background-color: rgba(202, 155, 107, 0.5);
 }
 
 #grid_item_16 {
     grid-area: 4/1/5/2;
-    background-color: rgba(35, 49, 161, 0.5);
 }
 
 #grid_item_17 {
     grid-area: 4/2/5/3;
-    background-color: rgba(132, 253, 195, 0.5);
 }
 
 #grid_item_18 {
     grid-area: 4/3/5/4;
-    background-color: rgba(174, 153, 184, 0.5);
 }
 
 #grid_item_19 {
     grid-area: 4/4/5/5;
-    background-color: rgba(196, 246, 66, 0.5);
 }
 
 #grid_item_20 {
     grid-area: 4/5/5/6;
-    background-color: rgba(253, 48, 123, 0.5);
 }
 
 #grid_item_21 {
     grid-area: 5/1/6/2;
-    background-color: rgba(110, 106, 132, 0.5);
 }
 
 #grid_item_22 {
     grid-area: 5/2/6/3;
-    background-color: rgba(128, 191, 132, 0.5);
 }
 
 #grid_item_23 {
     grid-area: 5/3/6/4;
-    background-color: rgba(249, 36, 11, 0.5);
 }
 
 #grid_item_24 {
     grid-area: 5/4/6/5;
-    background-color: rgba(140, 163, 164, 0.5);
 }
 
 #grid_item_25 {
     grid-area: 5/5/6/6;
-    background-color: rgba(143, 199, 145, 0.5);
 }
 
 #grid_item_26 {
     grid-area: 6/1/7/2;
-    background-color: rgba(77, 198, 144, 0.5);
 }
 
 #grid_item_27 {
     grid-area: 6/2/7/3;
-    background-color: rgba(28, 149, 1, 0.5);
 }
 
 #grid_item_28 {
     grid-area: 6/3/7/4;
-    background-color: rgba(209, 248, 227, 0.5);
 }
 
 #grid_item_29 {
     grid-area: 6/4/7/5;
-    background-color: rgba(1, 239, 217, 0.5);
 }
 
 #grid_item_30 {
     grid-area: 6/5/7/6;
-    background-color: rgba(102, 164, 1, 0.5);
 }
