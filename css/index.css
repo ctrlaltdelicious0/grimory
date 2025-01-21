@@ -14,6 +14,33 @@ body {
     font-family: "Libre Caslon Display", serif;
 }
 
+.preloader_container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #101010;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.preload_gradient {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 100%;
+    background: linear-gradient(to bottom, #101010, transparent);
+}
+
+.ml13 {
+    font-size: 5rem;
+    letter-spacing: 0.5em;
+    font-weight: 100;
+    color: #fff;
+}
+
 /* HERO SECTION */
 
 header {
