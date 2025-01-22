@@ -16,7 +16,7 @@ lenis.on('scroll', (e) => {
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".end").forEach(element => {
         element.addEventListener("click", function () {
-            window.location.href = "../index.html";
+            window.history.back(); // Go back to the previous page in the history stack
         });
     });
 });
