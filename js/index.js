@@ -47,40 +47,51 @@ PowerGlitch.glitch(
 
 // PRELOADER
 
-var textWrapper = document.querySelector('.ml13');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// Check if the preloader has already been shown
+if (!sessionStorage.getItem("preloaderShown")) {
+  sessionStorage.setItem("preloaderShown", "true"); // Mark preloader as shown
 
-anime.timeline({ loop: false })
-  .add({
-    targets: '.ml13 .letter',
-    translateY: [100, 0],
-    translateZ: 0,
-    opacity: [0, 1],
-    easing: "easeOutExpo",
-    duration: 1000,
-    delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '.ml13 .letter',
-    translateY: [0, -100],
-    opacity: [1, 0],
-    easing: "easeInExpo",
-    duration: 1000,
-    delay: (el, i) => 100 + 30 * i
+  var textWrapper = document.querySelector('.ml13');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({ loop: false })
+    .add({
+      targets: '.ml13 .letter',
+      translateY: [100, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: (el, i) => 300 + 30 * i
+    }).add({
+      targets: '.ml13 .letter',
+      translateY: [0, -100],
+      opacity: [1, 0],
+      easing: "easeInExpo",
+      duration: 1000,
+      delay: (el, i) => 100 + 30 * i
+    });
+
+  document.body.style.overflow = "hidden";
+
+  gsap.to("#preloader_container", {
+    y: "-200%",
+    duration: 1.5,
+    delay: 3,
+    ease: "power2.in",
+    onComplete: function () {
+      document.getElementById("preloader_container").style.display = "none";
+      document.getElementById("preload_gradient").style.display = "none";
+      document.body.style.overflow = "auto";
+    }
   });
 
-document.body.style.overflow = "hidden";
-
-gsap.to("#preloader_container", {
-  y: "-200%",
-  duration: 1.5,
-  delay: 3,
-  ease: "power2.in",
-  onComplete: function () {
-    document.getElementById("preloader_container").style.display = "none";
-    document.getElementById("preload_gradient").style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-});
+} else {
+  // Hide preloader instantly if it has already been shown
+  document.getElementById("preloader_container").style.display = "none";
+  document.getElementById("preload_gradient").style.display = "none";
+  document.body.style.overflow = "auto";
+}
 
 // SWIPER CAROUSEL
 var swiper = new Swiper(".mySwiper", {
@@ -88,6 +99,7 @@ var swiper = new Swiper(".mySwiper", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+  initialSlide: 7, // Start from the middle slide
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
