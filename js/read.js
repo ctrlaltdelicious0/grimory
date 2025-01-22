@@ -12,3 +12,11 @@ const lenis = new Lenis({
 lenis.on('scroll', (e) => {
     console.log(e);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".end").forEach(element => {
+        element.addEventListener("click", function () {
+            window.location.href = "../index.html";
+        });
+    });
+});
