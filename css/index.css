@@ -304,3 +304,16 @@ a {
 #grid_item_30 {
     grid-area: 6/5/7/6;
 }
+
+.copyright_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    color: white;
+    border-top: solid white;
+}
+
+.copyright {
+    font-size: 20px;
+}
