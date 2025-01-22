@@ -98,8 +98,10 @@ var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: "auto",
-  initialSlide: 7, // Start from the middle slide
+  slidesPerView: 5,
+  loop: true,
+  loopAdditionalSlides: 5,
+  initialSlide: 7,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
